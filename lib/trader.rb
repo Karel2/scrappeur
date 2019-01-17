@@ -1,6 +1,8 @@
 	require 'open-uri'
 	require 'nokogiri'
 
+def crypto_scrapper	
+
 	currencies_name = []
 	currencies_value = []
 	doc = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
@@ -19,5 +21,8 @@
 
 	hash_crypto = currencies_name.zip(currencies_value).to_h
 
-	print hash_crypto
+end
 
+def perform 
+	crypto_scrapper
+end	
